@@ -5,6 +5,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './components/app/App';
+import Dragons from './components/dragons/Dragons';
 import * as serviceWorker from './serviceWorker';
 
 const client = new ApolloClient({
@@ -27,6 +28,7 @@ client
 ReactDOM.render(
     <ApolloProvider client={client}>
       <App />
+      <Dragons />
     </ApolloProvider>
     , document.getElementById('root'));
 
