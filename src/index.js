@@ -3,9 +3,10 @@ import { ApolloProvider } from "react-apollo";
 import gql from "graphql-tag"
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter } from 'react-router-dom'
 import './index.css';
-import App from './components/app/App';
-import Dragons from './components/dragons/Dragons';
+import App from './components/App';
+import Dragons from './components/Dragons';
 import * as serviceWorker from './serviceWorker';
 
 const client = new ApolloClient({
@@ -26,13 +27,10 @@ client
     .then(result => console.log(result));
 
 ReactDOM.render(
-    <ApolloProvider client={client}>
-      <App />
-      <Dragons />
-    </ApolloProvider>
+    <BrowserRouter>
+      <ApolloProvider client={client}>
+        <App />
+        <Dragons />
+      </ApolloProvider>
+    </BrowserRouter>
     , document.getElementById('root'));
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: http://bit.ly/CRA-PWA
-serviceWorker.unregister();
