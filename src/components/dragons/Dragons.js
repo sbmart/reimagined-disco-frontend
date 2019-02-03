@@ -6,7 +6,7 @@ const Dragons = () => (
   <Query
     query={gql`
     {
-     knights {
+     dragons {
        id
        name
     }
@@ -17,7 +17,7 @@ const Dragons = () => (
       if (loading) return <p>Loading...</p>;
       if (error) return <p>Error :(</p>;
 
-      return data.knights.map(({ id, name }) => (
+      return data.dragons.map(({ id, name }) => (
         <div key={id}>
           <p>{id}: {name}</p>
         </div>
